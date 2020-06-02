@@ -1,2 +1,3 @@
 rootProject.name='VisualLog'
 include ':simple'
+include ':visuallog'
