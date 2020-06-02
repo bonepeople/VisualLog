@@ -1,0 +1,2 @@
+rootProject.name='VisualLog'
+include ':simple'

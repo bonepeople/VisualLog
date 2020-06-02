@@ -1,0 +1,26 @@
+ext {
+    android = [
+            minSdkVersion    : 21,
+            targetSdkVersion : 29,
+            compileSdkVersion: 29,
+            buildToolsVersion: "29.0.3",
+            versionCode      : 1,
+            versionName      : "1.0.1",
+    ]
+
+    publish = [
+            userName      : "bonepeople",
+            repositoryName: "android",
+            uploadName    : "VisualLog-androidx",
+
+            groupId       : "com.bonepeople.android.lib",
+            artifactId    : "VisualLog",
+            publishVersion: "1.0.1",
+            licences      : ['Apache-2.0'],
+
+            projectName   : "VisualLog",
+            projectDesc   : "Visual log display tool",
+            githubUrl     : "https://github.com/bonepeople/VisualLog",
+            gitUrl        : "https://github.com/bonepeople/VisualLog.git",
+    ]
+}
