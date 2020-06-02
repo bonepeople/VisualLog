@@ -22,8 +22,7 @@ public class VisualLog {
     }
 
     public synchronized static void log(@NonNull CharSequence content) {
-        if (!init)
-            throw new IllegalStateException("使用日志功能前必须先调用init(Context)方法进行初始化");
+        checkInit();
         if (TextUtils.isEmpty(content))
             throw new IllegalArgumentException("请提供正常的日志内容");
         data.add(new LogInfo(content));
@@ -31,9 +30,13 @@ public class VisualLog {
     }
 
     public synchronized static void clear() {
-        if (!init)
-            throw new IllegalStateException("使用日志功能前必须先调用init(Context)方法进行初始化");
+        checkInit();
         data.clear();
         LocalBroadcastUtil.sendBroadcast(UPDATE_LOG);
+    }
+
+    static void checkInit() {
+        if (!init)
+            throw new IllegalStateException("使用日志功能前必须先调用init(Context)方法进行初始化");
     }
 }

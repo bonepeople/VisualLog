@@ -6,12 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <com.bonepeople.android.visuallog.LogListView
+        android:id="@+id/logListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:background="#33999999"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
+        android:id="@+id/textView_explain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="上方是日志区域，直接在界面中放置一个LogListView，在日志有更新的时候就会自动刷新"
+        app:layout_constraintTop_toBottomOf="@id/logListView" />
+
+    <TextView
+        android:id="@+id/textView_auto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginTop="20dp"
+        android:text="每隔3秒自动发送一次日志"
+        app:layout_constraintStart_toStartOf="@id/textView_explain"
+        app:layout_constraintTop_toBottomOf="@id/textView_explain" />
+
+    <Switch
+        android:id="@+id/switch_auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/textView_auto"
+        app:layout_constraintStart_toEndOf="@id/textView_auto"
+        app:layout_constraintTop_toTopOf="@id/textView_auto" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:onClick="send"
+        android:text="手动发送一条日志信息"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

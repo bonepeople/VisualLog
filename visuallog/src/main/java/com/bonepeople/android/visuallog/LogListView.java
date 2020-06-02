@@ -34,6 +34,7 @@ public class LogListView extends RecyclerView {
         setLayoutManager(layoutManager);
         adapter = new LogAdapter();
         setAdapter(adapter);
+        VisualLog.checkInit();
         LocalBroadcastUtil.registerReceiver(receiver, VisualLog.UPDATE_LOG);
     }
 
@@ -54,7 +55,7 @@ public class LogListView extends RecyclerView {
         @Override
         public void onReceive(Context context, Intent intent) {
             adapter.notifyDataSetChanged();
-            scrollToPosition(adapter.getItemCount()-1);
+            scrollToPosition(adapter.getItemCount() - 1);
         }
     }
 }
