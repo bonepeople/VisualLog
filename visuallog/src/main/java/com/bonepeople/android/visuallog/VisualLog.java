@@ -1,6 +1,9 @@
 package com.bonepeople.android.visuallog;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
+import android.provider.Settings;
 import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
@@ -40,6 +43,13 @@ public class VisualLog {
     public static boolean showFloatWindow(@NonNull Context context) {
         Objects.requireNonNull(context);
         checkInit();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (!Settings.canDrawOverlays(context)) {
+                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
+                context.startActivity(intent);
+                return false;
+            }
+        }
         if (controlWindow == null)
             controlWindow = new ControlWindow(context);
         return controlWindow.show();
