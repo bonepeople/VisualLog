@@ -1,1 +1,5 @@
-<manifest package="com.bonepeople.android.visuallog" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bonepeople.android.visuallog">
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+</manifest>

@@ -42,11 +42,29 @@
         app:layout_constraintTop_toTopOf="@id/textView_auto" />
 
     <Button
+        android:id="@+id/button_send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:onClick="send"
+        android:layout_marginTop="10dp"
         android:text="手动发送一条日志信息"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toStartOf="@id/textView_auto"
+        app:layout_constraintTop_toBottomOf="@id/textView_auto" />
+
+    <Button
+        android:id="@+id/button_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="清空日志信息"
+        app:layout_constraintStart_toStartOf="@id/button_send"
+        app:layout_constraintTop_toBottomOf="@id/button_send" />
+
+    <Button
+        android:id="@+id/button_float"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="显示悬浮窗"
+        app:layout_constraintStart_toStartOf="@id/button_clear"
+        app:layout_constraintTop_toBottomOf="@id/button_clear" />
 </androidx.constraintlayout.widget.ConstraintLayout>

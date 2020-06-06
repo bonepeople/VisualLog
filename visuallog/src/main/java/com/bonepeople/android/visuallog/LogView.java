@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
+import com.bonepeople.android.dimensionutil.DimensionUtil;
+
 class LogView extends LinearLayout {
     private TextView textView_time;
     private TextView textView_content;
@@ -35,7 +37,7 @@ class LogView extends LinearLayout {
 
         textView_content = new TextView(getContext());
         textView_content.setTextColor(0xFF000000);
-        textView_content.setPadding(10, 10, 10, 20);
+        textView_content.setPadding(DimensionUtil.getPx(5), DimensionUtil.getPx(5), DimensionUtil.getPx(5), DimensionUtil.getPx(10));
 
         addView(textView_time);
         addView(textView_content);

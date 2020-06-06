@@ -24,7 +24,7 @@ class LogAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return VisualLog.data.size();
     }
 
-    private class ViewHolder_data extends RecyclerView.ViewHolder {
+    private static class ViewHolder_data extends RecyclerView.ViewHolder {
         private LogView logView;
 
         private ViewHolder_data(@NonNull LogView itemView) {

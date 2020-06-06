@@ -37,6 +37,7 @@ dependencies {
 
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.bonepeople.android.lib:LocalBroadcastUtil:1.2.1'
+    implementation 'com.bonepeople.android.lib:DimensionUtil:1.2.1'
 }
 
 publish {

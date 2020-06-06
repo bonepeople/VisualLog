@@ -11,8 +11,10 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class VisualLog {
+    static final String TAG = "VisualLog";
     static final String UPDATE_LOG = "VisualLog_UPDATE_LOG";
     static ArrayList<LogInfo> data = new ArrayList<>();
+    private static ControlWindow controlWindow;
     private static boolean init = false;
 
     public static void init(@NonNull Context context) {
@@ -33,6 +35,27 @@ public class VisualLog {
         checkInit();
         data.clear();
         LocalBroadcastUtil.sendBroadcast(UPDATE_LOG);
+    }
+
+    public static boolean showFloatWindow(@NonNull Context context) {
+        Objects.requireNonNull(context);
+        checkInit();
+        if (controlWindow == null)
+            controlWindow = new ControlWindow(context);
+        return controlWindow.show();
+    }
+
+    public static boolean hideFloatWindow() {
+        if (controlWindow == null)
+            return false;
+        return controlWindow.hide();
+    }
+
+    public static void destroyFloatWindow() {
+        if (controlWindow == null)
+            return;
+        controlWindow.destroy();
+        controlWindow = null;
     }
 
     static void checkInit() {
